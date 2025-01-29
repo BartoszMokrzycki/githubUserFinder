@@ -30,11 +30,6 @@ const errorMsg = document.querySelector('.errorMsg');
 const colormodeBtn = document.querySelector('.appnav-appIcon');
 const searchUserBtn = document.querySelector('.search-button');
 
-console.log(CONFIG.GIT_TOKEN);
-
-
-
-
 async function getUserByUsername() {
 	const username = searchbar.value || 'bartoszMokrzycki';
 	const url = `https://api.github.com/users/${username}`;
@@ -43,7 +38,6 @@ async function getUserByUsername() {
 		const response = await fetch(url, {
 			headers: {
 				Accept: 'application/vnd.github+json',
-				Authorization: `Bearer ${CONFIG.GIT_TOKEN}`,
 			},
 		});
 
@@ -53,7 +47,7 @@ async function getUserByUsername() {
 
 		const userData = await response.json();
 
-		//user data
+		// User data
 		userImg.setAttribute('src', userData.avatar_url);
 		userName.textContent = userData.name;
 		userTag.textContent = `@${userData.login}`;
@@ -63,18 +57,18 @@ async function getUserByUsername() {
 		const formattedDate = date.toISOString().split('T')[0];
 		userJoinDate.textContent = `Joined ${formattedDate}`;
 
-		//bio
+		// Bio
 		userDescription.textContent = userData.bio || 'This profile has no bio';
 
-		//numbers
+		// Numbers
 		repoQuantity.textContent = userData.public_repos;
 		followersQuantity.textContent = userData.followers;
 		followingQuantity.textContent = userData.following;
 
-		// Dodatkowe dane
+		// Additional info
 		const setUserInfo = (element, value) => {
 			element.textContent = value || 'Not Available';
-			if (value === null || value === '') {
+			if (!value) {
 				element.classList.add('unavailable');
 				element.previousElementSibling.classList.add('unavailable');
 				element.style.pointerEvents = 'none';
@@ -82,7 +76,6 @@ async function getUserByUsername() {
 				element.classList.remove('unavailable');
 				element.previousElementSibling.classList.remove('unavailable');
 				element.style.pointerEvents = 'all';
-
 				if (element !== userCity && element !== userCompany) {
 					element.setAttribute('href', value);
 				}
@@ -138,6 +131,6 @@ document.addEventListener('DOMContentLoaded', getUserByUsername);
 searchbar.addEventListener('keydown', event => {
 	if (event.key === 'Enter' && searchbar.value.trim() !== '') {
 		event.preventDefault();
-		getUserByUsername(searchbar.value.trim());
+		getUserByUsername();
 	}
 });
