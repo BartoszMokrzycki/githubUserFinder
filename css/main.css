@@ -1,0 +1,421 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Mono", serif;
+  background-color: #f6f8ff;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #141d2f;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-Section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
+.app-Section .appnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3em;
+}
+.app-Section .appnav-appName {
+  font-size: 2.6rem;
+  font-weight: 600;
+  transition: color 0.3s;
+  color: black;
+}
+.app-Section .appnav-appName.dark-mode {
+  color: #ffffff;
+}
+.app-Section .appnav-appIcon {
+  display: flex;
+  color: #4b6a9b;
+  transition: color 0.3s;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.app-Section .appnav-appIcon.light:hover {
+  color: #90a4d4;
+}
+.app-Section .appnav-appIcon.dark-mode {
+  color: #ffffff;
+}
+.app-Section .appnav-appIcon:hover {
+  color: #2b3442;
+}
+.app-Section .appnav-appIcon--name {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding-right: 1em;
+}
+.app-Section .appnav-appIcon i {
+  font-size: 2.2rem;
+}
+.app-Section .search-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+.app-Section .search-container .errorMsg {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #f74646;
+  right: 110px;
+  top: 18px;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.app-Section .search-container .errorMsg.hidden {
+  opacity: 0;
+}
+.app-Section .search-input {
+  font-family: "Space Mono", sans-serif;
+  width: 100%;
+  padding: 1.5em 2em;
+  padding-left: 4em;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  background-color: #fefefe;
+  box-shadow: 0 2px 5px 0.1px #c4d0e4;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.app-Section .search-input.dark-mode {
+  background-color: #1e2a47;
+  box-shadow: none;
+  color: #ffffff;
+}
+.app-Section .search-input::-moz-placeholder {
+  font-family: "Space Mono", sans-serif;
+  font-size: 1.3rem;
+  color: #4b6a9b;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.app-Section .search-input::placeholder {
+  font-family: "Space Mono", sans-serif;
+  font-size: 1.3rem;
+  color: #4b6a9b;
+  transition: color 0.3s;
+}
+.app-Section .searchIcon {
+  position: absolute;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #0079ff;
+  left: 10px;
+  top: 20px;
+  padding: 0 0.5em;
+}
+.app-Section .search-button {
+  font-family: "Space Mono", sans-serif;
+  position: absolute;
+  padding: 1em 1.6em;
+  border-radius: 16px;
+  right: 8px;
+  top: 6px;
+  background-color: #0079ff;
+  color: #fefefe;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.app-Section .search-button:hover {
+  background-color: #60abff;
+}
+.app-Section .user-profile {
+  margin-top: 2em;
+  padding: 2em 1em;
+  background-color: #fefefe;
+  border-radius: 16px;
+  box-shadow: 0 2px 5px 0.1px #c4d0e4;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.app-Section .user-profile.dark-mode {
+  background-color: #1e2a47;
+  box-shadow: none;
+  color: #ffffff;
+}
+.app-Section .user-profile .user__box {
+  display: flex;
+  align-items: center;
+}
+.app-Section .user-profile .user__box .user__img {
+  margin: 0em 1.5em;
+}
+.app-Section .user-profile .user__box .user__img img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+.app-Section .user-profile .user__box .user__data {
+  display: flex;
+  flex-direction: column;
+}
+.app-Section .user-profile .user__box .user__data--name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.app-Section .user-profile .user__box .user__data--tag {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #0079ff;
+  cursor: pointer;
+  transition: -webkit-text-decoration 0.3s;
+  transition: text-decoration 0.3s;
+  transition: text-decoration 0.3s, -webkit-text-decoration 0.3s;
+}
+.app-Section .user-profile .user__box .user__data--tag:hover {
+  text-decoration: underline;
+}
+.app-Section .user-profile .user__box .user__data--joinDate {
+  font-size: 1.3rem;
+  color: #697c9a;
+}
+.app-Section .user-profile .user__description {
+  padding: 2em 1em;
+  font-size: 1.3rem;
+  color: #4b6a9b;
+  text-align: justify;
+  transition: color 0.3s;
+}
+.app-Section .user-profile .user__description.dark-mode {
+  color: #ffffff;
+}
+.app-Section .user-profile .user__numbers-box {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  background-color: #f6f8ff;
+  padding: 1em 0;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+}
+.app-Section .user-profile .user__numbers-box.dark-mode {
+  background-color: #141d2f;
+}
+.app-Section .user-profile .user__numbers-box .repo,
+.app-Section .user-profile .user__numbers-box .followers,
+.app-Section .user-profile .user__numbers-box .following {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: color 0.3s;
+}
+.app-Section .user-profile .user__numbers-box p {
+  font-size: 1.1rem;
+  color: #4b6a9b;
+  transition: color 0.3s;
+}
+.app-Section .user-profile .user__numbers-box p.dark-mode {
+  color: #ffffff;
+}
+.app-Section .user-profile .user__numbers-box .repo--number,
+.app-Section .user-profile .user__numbers-box .followers--number,
+.app-Section .user-profile .user__numbers-box .following--number {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.app-Section .user-profile .user__links {
+  padding: 2em 1em;
+}
+.app-Section .user-profile .user__links .links {
+  display: flex;
+  flex-direction: column;
+}
+.app-Section .user-profile .user__links .links .link {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0.3em 0;
+  color: #4b6a9b;
+  transition: color 0.3s;
+}
+.app-Section .user-profile .user__links .links .link.dark-mode {
+  color: #ffffff;
+}
+.app-Section .user-profile .user__links .links .link a {
+  text-decoration: none;
+  color: #4b6a9b;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.app-Section .user-profile .user__links .links .link a.dark-mode {
+  color: #ffffff;
+}
+.app-Section .user-profile .user__links .links .link a.unavailable {
+  color: #9a9797;
+}
+.app-Section .user-profile .user__links .links .link a:hover {
+  text-decoration: underline;
+}
+.app-Section .user-profile .user__links .links .link--icon {
+  width: 35px;
+  font-size: 1.6rem;
+  padding-right: 1em;
+}
+.app-Section .user-profile .user__links .links .unavailable {
+  color: #9a9797;
+}
+
+@media (min-width: 576px) {
+  .app-Section {
+    max-width: 576px;
+  }
+}
+@media (min-width: 768px) {
+  .app-Section {
+    margin-top: 100px;
+    max-width: 576px;
+  }
+  .app-Section .user-profile {
+    padding: 4em;
+  }
+  .app-Section .user-profile .user__box .user__img img {
+    width: 114px;
+    height: 114px;
+  }
+  .app-Section .user-profile .user__box .user__data--name {
+    font-size: 2.6rem;
+  }
+  .app-Section .user-profile .user__box .user__data--tag {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__box .user__data--tag:hover {
+    text-decoration: underline;
+  }
+  .app-Section .user-profile .user__box .user__data--joinDate {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__description {
+    font-size: 1.5rem;
+  }
+  .app-Section .user-profile .user__numbers-box p {
+    font-size: 1.4rem;
+  }
+  .app-Section .user-profile .user__numbers-box .repo--number,
+  .app-Section .user-profile .user__numbers-box .followers--number,
+  .app-Section .user-profile .user__numbers-box .following--number {
+    font-size: 2.2rem;
+  }
+  .app-Section .user-profile .user__links .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .app-Section .user-profile .user__links .links .link {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__links .links .link--icon {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 966px) {
+  .app-Section {
+    max-width: 730px;
+  }
+  .app-Section .user-profile .user__box {
+    align-items: flex-start;
+  }
+  .app-Section .user-profile .user__box .user__data {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .app-Section .user-profile .user__box .user__data--name {
+    order: -1;
+  }
+  .app-Section .user-profile .user__box .user__data--tag {
+    order: 0;
+  }
+  .app-Section .user-profile .user__box .user__data--joinDate {
+    align-self: baseline;
+    justify-self: end;
+    order: -1;
+  }
+  .search-container .search-input::-moz-placeholder {
+    font-size: 1.6rem;
+  }
+  .search-container .search-input::placeholder {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .app-Section {
+    max-width: 750px;
+  }
+  .app-Section .user-profile {
+    padding: 4em;
+  }
+  .app-Section .user-profile .user__box .user__img img {
+    width: 114px;
+    height: 114px;
+  }
+  .app-Section .user-profile .user__box .user__data--name {
+    font-size: 2.6rem;
+  }
+  .app-Section .user-profile .user__box .user__data--tag {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__box .user__data--tag:hover {
+    text-decoration: underline;
+  }
+  .app-Section .user-profile .user__box .user__data--joinDate {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__description {
+    padding-top: 0;
+    font-size: 1.5rem;
+  }
+  .app-Section .user-profile .user__numbers-box p {
+    font-size: 1.4rem;
+  }
+  .app-Section .user-profile .user__numbers-box .repo--number,
+  .app-Section .user-profile .user__numbers-box .followers--number,
+  .app-Section .user-profile .user__numbers-box .following--number {
+    font-size: 2.2rem;
+  }
+  .app-Section .user-profile .user__links .links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .app-Section .user-profile .user__links .links .link {
+    font-size: 1.6rem;
+  }
+  .app-Section .user-profile .user__links .links .link--icon {
+    font-size: 1.8rem;
+  }
+  .app-Section .user-profile .user__description,
+  .app-Section .user-profile .user__links,
+  .app-Section .user-profile .user__numbers {
+    padding-left: 150px;
+  }
+}/*# sourceMappingURL=main.css.map */

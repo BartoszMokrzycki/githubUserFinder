@@ -1,0 +1,75 @@
+@media (min-width: 1200px) {
+	.app-Section {
+		max-width: 750px;
+
+		.user-profile {
+			padding: 4em;
+			.user__box {
+				.user__img {
+					img {
+						width: 114px;
+						height: 114px;
+					}
+				}
+
+				.user__data {
+					&--name {
+						font-size: 2.6rem;
+					}
+
+					&--tag {
+						font-size: 1.6rem;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+
+					&--joinDate {
+						font-size: 1.6rem;
+					}
+				}
+			}
+			.user__description {
+				padding-top: 0;
+				font-size: 1.5rem;
+			}
+
+			.user__numbers {
+				&-box {
+					p {
+						font-size: 1.4rem;
+					}
+
+					.repo--number,
+					.followers--number,
+					.following--number {
+						font-size: 2.2rem;
+					}
+				}
+			}
+
+			.user__links {
+				.links {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+
+					.link {
+						font-size: 1.6rem;
+
+						&--icon {
+							font-size: 1.8rem;
+						}
+					}
+				}
+			}
+
+			.user__description,
+			.user__links,
+			.user__numbers {
+				// width: 70%;
+                padding-left: 150px;
+			}
+		}
+	}
+}

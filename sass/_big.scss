@@ -1,0 +1,39 @@
+@media (min-width: 966px) {
+	.app-Section {
+		max-width: 730px;
+
+		.user-profile {
+			.user__box {
+				align-items: flex-start;
+				.user__data {
+					width: 100%;
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					align-items: center;
+
+					&--name {
+						order: -1;
+					}
+					&--tag {
+						order: 0;
+					}
+					&--joinDate {
+						align-self: baseline;
+						justify-self: end;
+						order: -1;
+					}
+				}
+			}
+
+			
+		}
+	}
+
+	.search-container {
+		.search-input {
+			&::placeholder {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>gitHub User Search</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="shortcut icon" href="./assets/github-6980894_640.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet" />
+		<script
+			src="https://kit.fontawesome.com/e6248a83de.js"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body class="dark-mode">
+		<main>
+			<section class="app-Section">
+				<div class="appnav">
+					<p class="appnav-appName dark-mode">devfinder</p>
+					<div class="appnav-appIcon light dark-mode">
+						<p class="appnav-appIcon--name">light</p>
+						<i class="fa-solid fa-sun"></i>
+					</div>
+				</div>
+				<div class="searchbar">
+					<div class="search-container">
+						<i class="fa-solid fa-magnifying-glass searchIcon"></i>
+						<input
+							type="text"
+							class="search-input dark-mode"
+							placeholder="Search GitHub username..." />
+						<button class="search-button">Search</button>
+						<p class="errorMsg hidden">No result</p>
+					</div>
+				</div>
+				<div class="user-profile dark-mode">
+					<div class="user__box">
+						<div class="user__img">
+							<img
+								src="./assets/github-6980894_640.png"
+								alt=""
+								class="userImg" />
+						</div>
+						<div class="user__data">
+							<div class="user__data--name"></div>
+							<a target="_blank" class="user__data--tag"></a>
+							<div class="user__data--joinDate"></div>
+						</div>
+					</div>
+					<p class="user__description dark-mode"></p>
+					<div class="user__numbers">
+						<div class="user__numbers-box dark-mode">
+							<div class="repo">
+								<p class="user--text dark-mode">Repos</p>
+								<div class="repo--number"></div>
+							</div>
+							<div class="followers">
+								<p class="user--text dark-mode">Followers</p>
+								<div class="followers--number"></div>
+							</div>
+							<div class="following">
+								<p class="user--text dark-mode">Following</p>
+								<div class="following--number"></div>
+							</div>
+						</div>
+					</div>
+					<div class="user__links">
+						<div class="links">
+							<div class="link dark-mode">
+								<i class="fa-solid fa-location-dot link--icon"></i>
+								<p class="link--text city"></p>
+							</div>
+							<div class="link dark-mode">
+								<i class="fa-solid fa-link link--icon"></i>
+								<a target="_blank" class="link--link blogAcc dark-mode"></a>
+							</div>
+							<div class="link dark-mode">
+								<i class="fa-brands fa-twitter link--icon"></i>
+								<a class="link--text twitterAcc"> </a>
+							</div>
+							<div class="link dark-mode">
+								<i class="fa-solid fa-city link--icon"></i>
+								<p class="link--link company dark-mode"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+	<script src="./config.js"></script>
+	<script src="./main.js"></script>
+</html>
